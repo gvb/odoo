@@ -62,6 +62,21 @@ class analytical_timesheet_employee(osv.osv_memory):
             'report_name': 'hr.analytical.timesheet',
             'datas': datas,
             }
+
+    def print_csv(self, cr, uid, ids, context=None):
+        data = self.read(cr, uid, ids, context=context)[0]
+        data['employee_id'] = data['employee_id'][0]
+        datas = {
+             'ids': [],
+             'model': 'hr.employee',
+             'report_type': 'csv',
+             'form': data
+                 }
+        return {
+            'type': 'ir.actions.report.xml',
+            'report_name': 'hr.analytical.timesheet',
+            'datas': datas,
+            }
 analytical_timesheet_employee()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -21,7 +21,8 @@
                         </group>
                     </sheet>
                     <footer>
-                        <button string="Print" name="print_report" type="object" class="oe_highlight"/> or
+                        <button string="Print" name="print_report" type="object" class="oe_highlight"/>
+                        <button string="CSV" name="print_csv" type="object" class="oe_highlight"/> or
                         <button string="Cancel" class="oe_link" special="cancel"/>
                     </footer>
                 </form>

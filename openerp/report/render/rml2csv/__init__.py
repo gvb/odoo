@@ -19,18 +19,11 @@
 #
 ##############################################################################
 
-from simple import simple
-from rml import rml, rml2html, rml2csv, rml2txt, odt2odt , html2html, makohtml2html
-from render import render
+from rml2csv import parseString
 
-#.apidoc title: Report Rendering
+#.apidoc title: RML to CSV engine
 
-try:
-    from PIL import Image
-except ImportError:
-    import logging
-    _logger = logging.getLogger(__name__)
-    _logger.warning('Python Imaging not installed, you can use only .JPG pictures !')
+""" This engine is the minimalistic renderer of RML documents into csv files.
+"""
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-

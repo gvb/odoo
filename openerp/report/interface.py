@@ -73,6 +73,7 @@ class report_rml(report_int):
             'html': self.create_html,
             'raw': self.create_raw,
             'sxw': self.create_sxw,
+            'csv': self.create_csv,
             'txt': self.create_txt,
             'odt': self.create_odt,
             'html2html' : self.create_html2html,
@@ -210,6 +211,11 @@ class report_rml(report_int):
         obj = render.rml2html(rml, localcontext, self.bin_datas)
         obj.render()
         return obj.get()
+
+    def create_csv(self, rml, localcontext=None, logo=None, title=None):
+        obj = render.rml2csv(rml, localcontext, self.bin_datas)
+        obj.render()
+        return obj.get().encode('utf-8')
 
     def create_txt(self, rml,localcontext, logo=None, title=None):
         obj = render.rml2txt(rml, localcontext, self.bin_datas)
